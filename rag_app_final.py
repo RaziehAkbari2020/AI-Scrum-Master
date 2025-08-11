@@ -52,9 +52,9 @@ if not (OPENAI_API_KEY and (OPENAI_API_KEY.startswith("sk-") or OPENAI_API_KEY.s
     st.stop()
 
 # ------------------ Upload JSONL ------------------
-up = st.file_uploader("Upload your data (هر خط: {page_content, metadata})", type=["jsonl"])
+up = st.file_uploader("Upload your data (each line: {page_content, metadata})", type=["jsonl"])
 if not up:
-    st.info("لطفاً فایل documents.jsonl را آپلود کن.")
+    st.info("Please upload the file documents.jsonl.")
     st.stop()
 
 # اگر فایل جدیدی (اسم/سایز متفاوت) آپلود شد، ایندکس قبلی را پاک کن
