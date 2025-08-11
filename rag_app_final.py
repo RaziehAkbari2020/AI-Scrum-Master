@@ -21,7 +21,7 @@ if not st.session_state.get("_pg_cfg_set"):
     st.set_page_config(page_title="As A Agile Project Manager Chat with your data", page_icon="💬")
     st.session_state["_pg_cfg_set"] = True
 
-st.title("As A Scrum Master Chat with your data")
+st.title("As A Agile Project Manager Chat with your data")
 
 
 # from langchain.schema import Document
