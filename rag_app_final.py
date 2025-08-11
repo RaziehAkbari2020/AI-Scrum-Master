@@ -42,16 +42,13 @@ from langgraph.checkpoint.sqlite import SqliteSaver  # 👈 persistent memory
 
 # ------------------ API keys ------------------
 # ⚠️ فقط برای تست محلی: قبل از انتشار، مقدار هاردکد را حذف کن یا secrets.toml بساز.
-HARDCODED_OPENAI_API_KEY ="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"
-
-# امن‌تر: اول از secrets بخوان، اگر نبود از ENV، اگر نبود از مقدار هاردکد
 try:
     OPENAI_API_KEY = st.secrets["OPENAI_API_KEY"]
 except Exception:
-    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") or HARDCODED_OPENAI_API_KEY
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 
-if not OPENAI_API_KEY or OPENAI_API_KEY.startswith("REPLACE_WITH"):
-    st.error("OPENAI_API_KEY تنظیم نشده. آن را در .streamlit/secrets.toml یا ENV قرار بده (یا موقتاً مقدار هاردکد را جایگزین کن).")
+if not (OPENAI_API_KEY and (OPENAI_API_KEY.startswith("sk-") or OPENAI_API_KEY.startswith("sk-proj-"))):
+    st.error("OPENAI_API_KEY در Secrets تنظیم نشده یا معتبر نیست.")
     st.stop()
 
 # ------------------ Upload JSONL ------------------
