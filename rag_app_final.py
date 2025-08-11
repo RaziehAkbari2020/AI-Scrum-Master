@@ -8,7 +8,7 @@ Original file is located at
 """
 
 # -*- coding: utf-8 -*-
-"""RAG_App.py — Streamlit RAG with FAISS + persistent memory"""
+"""RAG_App.py — Retrieval-Augmented Generation App with Persistent Memory"""
 
 # ------------------ Imports ------------------
 import os, json, uuid
@@ -18,7 +18,7 @@ from pathlib import Path
 import streamlit as st
 
 if not st.session_state.get("_pg_cfg_set"):
-    st.set_page_config(page_title="As A Scrum Master Chat with your data", page_icon="💬")
+    st.set_page_config(page_title="As A Agile Project Manager Chat with your data", page_icon="💬")
     st.session_state["_pg_cfg_set"] = True
 
 st.title("As A Scrum Master Chat with your data")
