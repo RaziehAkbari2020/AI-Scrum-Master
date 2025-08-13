@@ -20,9 +20,9 @@ import streamlit as st
 if not st.session_state.get("_pg_cfg_set"):
     st.set_page_config(page_title="As A Agile Project Manager Chat with your data", page_icon="💬")
     st.session_state["_pg_cfg_set"] = True
-# st.image("Logo_UPC_pillars.jpg", width=170)
+st.image("Logo_UPC_pillars.jpg", width=150)
 # st.image("image.jpeg", width=170)
-st.image("image (1).jpeg", width=150)
+# st.image("image (1).jpeg", width=150)
 
 
 
